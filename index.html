@@ -1,19 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project ChMaquina</title>
     <!-- importar los estilos  -->
-    <link rel="stylesheet" href="./src/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <
+        <div id="menu">
+          <ul>
+            <li>
+              <label for="file-input" class="custom-file-upload">
+                Seleccionar archivo
+              </label>
+              <input type="file" id="file-input" accept=".ch" />
+              <div id="toast" class="toast">
+                <img
+                  src="https://via.placeholder.com/20x20"
+                  alt="Advertencia"
+                />
+                <span
+                  >Archivo incorrecto. Solo se permiten archivos con extensión
+                  .sh.</span
+                >
+              </div>
+            </li>
+            <li><button id="Inicio">Ejecutar</button></li>
+            <li><button id="PasoaP">paso a paso</button></li>
+            <li><button id="MostrarM">Mostrar Memoria</button></li>
+            <li><button id="MostrarP">Mostrar Progamas</button></li>
+            <li><button id="Sjf">SJF No expropiativo</button></li>
+            <li><button id="Fcfs">FCFS</button></li>
+          </ul>
+        </div>
 
+        <div class="acumulador">
+          <label for="cambiar_memoria">Memoria</label>
+          <input
+            type="number"
+            name="memoria"
+            id="memoryInput"
+            max="2100"
+            min="90"
+            placeholder="90"
+          />
 
-    <h1>PROJECT CH MAQUINA BY:</h1>
-    <h2>Ing. Fabian Guancha</h2>
+          <label for="cambiar_memoria">Kernel</label>
+          <input
+            type="number"
+            name="kernel"
+            id="kernelInput"
+            max="2100"
+            min="29"
+            placeholder="29"
+          />
+          <h2>Acumulador</h2>
+          <div id="acumulador_text"></div>
+        </div>
+      </nav>
+    </header>
 
-    
-</body>
+    <main>
+      <section class="tabla_memoria">
+        <div class="mapa_div">
+          <h3 class="titulotabla">Memoria</h3>
+          <table border="2" id="memoria">
+            <tr>
+              <th>Posición</th>
+              <th>Contenido</th>
+            </tr>
+          </table>
+        </div>
+        <pre id="contenido_archivo"></pre>
+      </section>
+
+      <div class="Salida_en_pantalla">
+        <textarea
+          name=""
+          id="computador"
+          cols="33"
+          rows="10"
+          title="computador"
+        ></textarea>
+      </div>
+
+      <section class="Impresion">
+        <!--Contiene al "computador" e "impresora" donde se muestran las salidas-->
+        <div class="Impresion_div">
+          <textarea
+            name=""
+            id="impresora"
+            cols="20"
+            rows="6"
+            title="impresora"
+          ></textarea>
+        </div>
+      </section>
+
+      <section id="contenedor_tablas">
+        <!--Mapa de variables y etiquetas-->
+        <div class="tabla_etiquetas_div">
+          <h2 class="titulos_tablas">Etiquetas</h2>
+          <table id="tabla_etiquetas" border="2">
+            <tr>
+              <th>Posición</th>
+              <th>etiquetas</th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="tabla_variables_div">
+          <h2 class="titulos_tablas">Variables</h2>
+          <table id="tabla_variables" border="5">
+            <tr>
+              <th>Posición</th>
+              <th>variables</th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="tabla_programas_div">
+          <h2 class="titulos_tablas">Programas</h2>
+          <table id="tabla_programas" border="2">
+            <tr>
+              <th>Posición</th>
+              <th>programas</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/index.js"></script>
+  </body>
 </html>
