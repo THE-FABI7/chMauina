@@ -54,8 +54,8 @@ input[type="file"] {
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f2dede;
-  color: #a94442;
+  background-color: black;
+  color: white;
   border: 1px solid #ebccd1;
   border-radius: 5px;
   padding: 10px 20px;
@@ -140,12 +140,15 @@ li {
 /* Estilos para la sección de tabla de memoria */
 .tabla_memoria {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content:center; 
+  align-items: center; */
   margin: 50px auto;
   background-color: rgba(24, 4, 4, 0.808);
   color: #fff;
   padding: 20px;
+  overflow: scroll;
+  max-height: 25em;
+  float: right;
 }
 
 .mapa_div {
@@ -188,7 +191,7 @@ li {
     margin: 20px 50px;
     padding: 30px;
     border: 10px solid rgb(47, 72, 97);
-    position: relative;
+    position:relative;
     top: 23px;
     bottom: 0;
     right: 0;
@@ -230,7 +233,7 @@ textarea#impresora {
 
 /* Estilos para la sección de contenedor de tablas */
 #contenedor_tablas {
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   margin: 50px auto;
