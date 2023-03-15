@@ -66,9 +66,9 @@ memoria.push(acumulador);
 document
   .getElementById("memoryInput")
   .addEventListener("change", crearTablaMemoria, false);
-document
-  .getElementById("kernelInput")
-  .addEventListener("change", asignarATablaKernel, false);
+// document
+//   .getElementById("kernelInput")
+//   .addEventListener("change", asignarATablaKernel, false);
 
 /**
  * Lee el archivo y lo empuja a una matriz
@@ -99,7 +99,7 @@ function CargarArchivos() {
     }
 
     programasParaCorrer.push(filas);
-    document.getElementById("KernelInput").setAttribute("hidden", "");
+    // document.getElementById("KernelInput").setAttribute("hidden", "");
     document.getElementById("MemoryInput").setAttribute("hidden", "");
     espacioDisponible =
       document.getElementById("MemoryInput").value -
@@ -115,13 +115,14 @@ function CargarArchivos() {
   });
 }
 
+
 /**
- * Crea la tabla para la memoria
+ * Crea una tabla con la capacidad de memoria que el usuario ha ingresado
  */
 function crearTablaMemoria() {
-  let capacidadTotalM = document.getElementById("memoryInput").value; //Capacidad total de la memoria
   let tablaMemoria = document.getElementById("memoria");
   let cuerpoTabla = document.createElement("tbody");
+  let capacidadTotalM = document.getElementById("memoryInput").value; //Capacidad total de la memoria
 
   for (
     totalParaMemoria;
