@@ -13,9 +13,17 @@
 }
 
 html {
-  background: #780206;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #780206; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   font-family: "Courier New", Courier, monospace;
 }
@@ -23,6 +31,10 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 h1,
 h2 {
   color: aliceblue;
+}
+
+tr{
+  color: white;
 }
 
 /* Estilos para el botón personalizado */
@@ -103,7 +115,6 @@ nav {
     #2e1437,
     #948e99
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
 }
 
 li {
@@ -112,16 +123,15 @@ li {
   display: inline-block;
   text-align: center;
   margin: 0px 1px;
-  
 }
 
-.acumulador{
+.acumulador {
   text-align: center;
   margin: 3px;
   color: #eee;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-#acumulador_text{
+#acumulador_text {
   text-align: center;
   background-color: #636161;
   width: 3%;
@@ -130,10 +140,10 @@ li {
   bottom: 43px;
   left: 740px;
 }
-#memoryInput{
+#memoryInput {
   margin: 7px;
 }
-#kernelInput{
+#kernelInput {
   margin: 7px;
 }
 
@@ -186,16 +196,16 @@ li {
   background-image: url(../resources/Monitor.png);
   background-repeat: no-repeat;
   width: 35%;
-    height: auto;
-    background-color: rgb(104, 89, 89);
-    margin: 20px 50px;
-    padding: 30px;
-    border: 10px solid rgb(47, 72, 97);
-    position:relative;
-    top: 23px;
-    bottom: 0;
-    right: 0;
-    left: 400px;
+  height: auto;
+  background-color: rgb(104, 89, 89);
+  margin: 20px 50px;
+  padding: 30px;
+  border: 10px solid rgb(47, 72, 97);
+  position: relative;
+  top: 23px;
+  bottom: 0;
+  right: 0;
+  left: 400px;
 }
 
 textarea#computador {
@@ -218,7 +228,6 @@ textarea#computador {
 
 .Impresion_div {
   margin-right: 20px;
-
 }
 
 textarea#impresora {
@@ -233,7 +242,7 @@ textarea#impresora {
 
 /* Estilos para la sección de contenedor de tablas */
 #contenedor_tablas {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 50px auto;
