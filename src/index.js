@@ -588,3 +588,122 @@ function iniciarEjecucion() {
     variableYEtiquetas(filas);
   }
 }
+/**
+ * La función "imprime" imprime el valor de una variable seleccionada o el acumulador.
+ * @param linea - Es un parámetro de la función `imprima()`. Es probable que sea una matriz que
+ * contenga el comando para imprimir una variable o el valor del acumulador. El primer elemento del
+ * arreglo puede ser la palabra clave "imprima" y el segundo elemento puede ser el nombre de la
+ * variable a imprimir o
+ * @returns nada (indefinido). Está utilizando la instrucción `return` para salir del bucle y detener
+ * la ejecución de la función, pero no devuelve ningún valor.
+ */
+
+function imprima(linea) {
+  if (pasoApaso == 1) {
+    alert("Se imprime el valor de la variable seleccionada");
+  }
+  let texto = "";
+  for (i = 0; i < listaDeVariables.length; i++) {
+    if (linea[1] === listaDeVariables[i].getNombre) {
+      texto = document.getElementById("impresora").textContent;
+      texto +=
+        '\nLa variable: "' +
+        listaDeVariables[i].getNombre +
+        '" tiene valor de: "' +
+        listaDeVariables[i].getValor +
+        '"\n';
+      document.getElementById("impresora").innerHTML = texto;
+      return;
+    } else if (linea[1] === "acumulador") {
+      texto = document.getElementById("impresora").textContent;
+      texto += '\nAcumulador: "' + acumulador + '"\n';
+      document.getElementById("impresora").innerHTML = texto;
+      return;
+    }
+  }
+}
+
+/**
+ * La función suma el valor de una variable especificada a un acumulador.
+ * @param nombreVariable - El parámetro "nombreVariable" es una variable que representa el nombre de la
+ * variable cuyo valor se quiere sumar al acumulador.
+ * @returns nada (indefinido). Solo actualiza el valor del acumulador y lo muestra en la página web.
+ */
+function sume(nombreVariable) {
+  if (pasoApaso === true) {
+    alert("Adiciona al acumulador el valor que haya en la variable");
+  }
+  for (i = 0; i < listaDeVariables.length; i++) {
+    if (nombreVariable === listaDeVariables[i].getNombre) {
+      acumulador = acumulador + listaDeVariables[i].getValor;
+      document.getElementById("acumulador_text").innerText = acumulador;
+      document.getElementById("0").innerText = "acumulador = " + acumulador;
+      return;
+    }
+  }
+}
+
+/* El código anterior define una función llamada "reste" que toma un parámetro llamado
+"nombreVariable". La función comprueba si una variable llamada "pasoApaso" es verdadera y muestra un
+mensaje de alerta si lo es. Luego recorre una matriz llamada "listaDeVariables" para encontrar la
+variable con el mismo nombre que el parámetro pasado. Si encuentra una coincidencia, resta el valor
+de esa variable de una variable llamada "acumulador", actualiza el contenido de texto de dos
+elementos HTML con el nuevo valor de "acumulador", registra el nuevo valor en la consola */
+function reste(nombreVariable) {
+  if (pasoApaso === true) {
+    alert("Resta el valor del acumulador el valor de la variable");
+  }
+  for (i = 0; i < listaDeVariables.length; i++) {
+    if (nombreVariable === listaDeVariables[i].getNombre) {
+      acumulador = acumulador - listaDeVariables[i].getValor; //resta el valor del acumulador con el valor de la variable
+      document.getElementById("acumulador_text").innerText = acumulador;
+      document.getElementById("0").innerText = "acumulador = " + acumulador;
+      console.log(acumulador);
+      return;
+    }
+  }
+}
+
+/**
+ * La función multiplica el valor de una variable dada al acumulador.
+ * @param nombreVariable - El nombre de la variable que necesita ser multiplicada con el acumulador.
+ * @returns nada (indefinido).
+ */
+/* El código anterior define una función llamada "multiplique" que toma un parámetro llamado
+"nombreVariable". Sin embargo, el cuerpo de la función no se proporciona y, en su lugar, se
+reemplaza con el marcador de posición " */
+function multiplique(nombreVariable) {
+  if (pasoApaso === true) {
+    alert("multiplica al acumulador por el valor que haya en la variable");
+  }
+  for (i = 0; i < listaDeVariables.length; i++) {
+    if (nombreVariable === listaDeVariables[i].getNombre) {
+      acumulador = acumulador * listaDeVariables[i].getValor;
+      document.getElementById("acumulador_text").innerText = acumulador;
+      document.getElementById("0").innerText = "acumulador = " + acumulador;
+      return;
+    }
+  }
+}
+
+/**
+ * La función divide el acumulador por el valor de una variable especificada en una lista de variables.
+ * @param nombreVariable - El parámetro "nombreVariable" es una cadena que representa el nombre de una
+ * variable que utilizará la función para dividir el acumulador por su valor.
+ * @returns nada (indefinido).
+ */
+function divida(nombreVariable) {
+  if (pasoApaso === true) {
+    alert("divide al acumulador por el valor que haya en la variable");
+  }
+  for (i = 0; i < listaDeVariables.length; i++) {
+    if (nombreVariable === listaDeVariables[i].getNombre) {
+      if (memoria[i].getValor != 0) {
+        acumulador = acumulador / listaDeVariables[i].getValor;
+        document.getElementById("acumulador_text").innerText = acumulador;
+        document.getElementById("0").innerText = "acumulador = " + acumulador;
+        return;
+      }
+    }
+  }
+}
